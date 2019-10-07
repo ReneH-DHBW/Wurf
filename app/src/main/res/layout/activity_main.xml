@@ -7,8 +7,16 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Herzlich Willkommen zu dem geilen Projekt" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/test"
+        android:text="Button" />
 
 </RelativeLayout>
