@@ -10,13 +10,41 @@
         android:id="@+id/test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Herzlich Willkommen zu dem geilen Projekt" />
+        android:text="Herzlich Willkommen zu diesem geilen Projekt" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/test"
-        android:text="Button" />
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="150dp"
+        android:text="Berechnen" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/test"
+        android:layout_marginTop="650dp"
+        android:layout_marginLeft="310dp"
+        android:text="Hilfe" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Höhe eingeben"
+        android:id="@+id/edit_text_1"
+        android:inputType="number"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="140dp"/>
+
+    <EditText
+        android:id="@+id/edit_text_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="123dp"
+        android:layout_marginTop="325dp"
+        android:hint="Wurfkraft eingeben"
+        android:inputType="number" />
 
 </RelativeLayout>
