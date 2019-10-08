@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/weite_wird_berechnet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_text_2"
@@ -16,7 +16,7 @@
         android:text="Berechnen" />
 
     <Button
-        android:id="@+id/button22"
+        android:id="@+id/zur_hilfe_seite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_text_2"
@@ -24,7 +24,7 @@
         android:layout_marginTop="300dp"
         android:text="Hilfe" />
     <EditText
-        android:id="@+id/edit_text_1"
+        android:id="@+id/eingegebene_höhe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -34,13 +34,13 @@
         android:layout_marginStart="140dp"/>
 
     <EditText
-        android:id="@+id/edit_text_2"
+        android:id="@+id/eingegebene_beschleunigung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:layout_marginStart="123dp"
         android:layout_marginTop="275dp"
-        android:hint="Wurfkraft eingeben"
+        android:hint="Beschleunigung eingeben"
         android:inputType="number" />
 
 </RelativeLayout>
