@@ -13,7 +13,7 @@
         android:text="Herzlich Willkommen zu diesem geilen Projekt" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/test"
@@ -30,11 +30,11 @@
         android:layout_marginStart="310dp"
         android:text="Hilfe" />
     <EditText
+        android:id="@+id/edit_text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:hint="Höhe eingeben"
-        android:id="@+id/edit_text_1"
         android:inputType="number"
         android:layout_marginTop="150dp"
         android:layout_marginStart="140dp"/>
