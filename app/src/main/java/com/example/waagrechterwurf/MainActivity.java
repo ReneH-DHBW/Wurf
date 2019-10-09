@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity{
 
     int hoehe = 0;
     int beschleunigung = 0;
+    int weite = 0;
+    int gravitation = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,7 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View view) {
                 hoehe =  Integer.valueOf(_eingegebene_höhe.getText().toString());
                 beschleunigung = Integer.valueOf(_eingegebene_beschleunigung.getText().toString());
-
-
+                weite = (int) (beschleunigung*Math.sqrt((2*hoehe)/gravitation));
             }
         });
 // Toast erstellen für Geschwindigkeit (Hilfe)
@@ -61,8 +62,6 @@ public class MainActivity extends AppCompatActivity{
                 toast.show();
             }
         });
-
-
     }
 
 
