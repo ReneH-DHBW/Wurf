@@ -2,7 +2,9 @@ package com.example.waagrechterwurf;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,40 +12,34 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends Activity implements View.OnClickListener {
 
-    protected Button _weite_wird_berechnet = null;
-    protected Button _zur_hilfe_seite = null;
-
-    protected EditText _eingegebene_höhe = null;
-    protected EditText _eingegebene_beschleunigung = null;
+//edit Texte oben deklarieren und Buttons in onCreate
+    protected EditText eingegebene_hoehe = null;
+    protected EditText eingegebene_beschleunigung = null;
 
     int hoehe = 0;
     int beschleunigung = 0;
     int weite = 0;
     int gravitation = 10;
-    int test = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        _weite_wird_berechnet = (Button) findViewById(R.id.weite_wird_berechnet);
-        _zur_hilfe_seite = (Button) findViewById(R.id.zur_hilfe_seite);
-        _eingegebene_höhe = (EditText) findViewById(R.id.eingegebene_höhe);
-        _eingegebene_beschleunigung = (EditText) findViewById(R.id.eingegebene_beschleunigung);
+        Button weite_wird_berechnet = findViewById(R.id.weite_wird_berechnet);
+        weite_wird_berechnet.setOnClickListener(this);
 
-        _weite_wird_berechnet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                hoehe =  Integer.valueOf(_eingegebene_höhe.getText().toString());
-                beschleunigung = Integer.valueOf(_eingegebene_beschleunigung.getText().toString());
-                weite = (int) (beschleunigung*Math.sqrt((2*hoehe)/gravitation));
-            }
-        });
+        Button zur_hilfe_seite = (Button) findViewById(R.id.zur_hilfe_seite);
+        zur_hilfe_seite.setOnClickListener(this);
+
+        eingegebene_hoehe = findViewById(R.id.eingegebene_höhe);
+        eingegebene_beschleunigung = findViewById(R.id.eingegebene_beschleunigung);
+
+
 // Toast erstellen für Geschwindigkeit (Hilfe)
-        Button hilfe_v = (Button) findViewById(R.id.hilfe_button_v);
+        Button hilfe_v = findViewById(R.id.hilfe_button_v);
         hilfe_v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,7 +48,6 @@ public class MainActivity extends AppCompatActivity{
                 toast.show();
             }
         });
-
 // Toast erstellen für Geschwindigkeit (Hilfe)
         Button hilfe_h = (Button) findViewById(R.id.hilfe_button_h);
         hilfe_h.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +59,22 @@ public class MainActivity extends AppCompatActivity{
             }
         });
     }
+//Für berechnen klick
+    @Override
+    public void onClick(View view) {
+        hoehe = Integer.valueOf(eingegebene_hoehe.getText().toString());
+        beschleunigung = Integer.valueOf(eingegebene_beschleunigung.getText().toString());
+        weite = (int) (beschleunigung * Math.sqrt((2 * hoehe) / gravitation));
 
+//Für die nächste Seite zum darstellen
+        Intent intent = new Intent(this, Activity2_Anzeige.class);
 
+        String textHoehe = eingegebene_hoehe.getText().toString();
+        intent.putExtra("data_hoehe", textHoehe);
 
+        String textV = eingegebene_beschleunigung.getText().toString();
+        intent.putExtra("data_beschleunigung", textV);
+
+        startActivity(intent);
+    }
 }
