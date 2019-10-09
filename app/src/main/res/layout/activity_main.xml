@@ -13,9 +13,9 @@
         android:layout_below="@id/weite_wird_berechnet"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="250dp"
+        android:layout_marginStart="260dp"
         android:layout_marginTop="220dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/Button_Hilfe" />
 
     <EditText
@@ -25,9 +25,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginEnd="100dp"
         android:autofillHints="0"
         android:hint="@string/EditText_hohe_eingeben"
         android:inputType="number"
@@ -40,9 +40,9 @@
         android:layout_below="@id/eingegebene_höhe"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginEnd="100dp"
         android:autofillHints="0"
         android:hint="@string/EdiText_eingegebene_Beschleunigung"
         android:inputType="number"
@@ -54,8 +54,32 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/eingegebene_beschleunigung"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="50dp"
         android:text="@string/Button_weite_wird_berechnet" />
+
+    <Button
+        android:id="@+id/hilfe_button_v"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eingegebene_höhe"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/Button_Hilfe_V" />
+
+    <Button
+        android:id="@+id/hilfe_button_h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="301dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/Button_Hilfe_H" />
 
 </RelativeLayout>

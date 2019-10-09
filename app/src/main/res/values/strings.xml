@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Waagrechter Wurf</string>
+
+    <string name="Button_weite_wird_berechnet">Berechnen</string>
+    <string name="EditText_hohe_eingeben">Höhe eingeben</string>
+    <string name="EdiText_eingegebene_Beschleunigung">Beschleunigung eingeben</string>
+    <string name="Button_Hilfe">Hilfe-Seite</string>
+    <string name="Button_Hilfe_V">Hilfe</string>
+    <string name="Button_Hilfe_H">Hilfe</string>
+
+    <string name="toast_hilfe_v">Die Wurfstärke eines Erwachsenen liegt im Bereich von ... bis ... .</string>
+    <string name="toast_hilfe_h">Die Höhe von der Sie werfen</string>
 </resources>
