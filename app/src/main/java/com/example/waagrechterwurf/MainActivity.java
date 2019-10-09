@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity{
     int beschleunigung = 0;
     int weite = 0;
     int gravitation = 10;
+    int test = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
