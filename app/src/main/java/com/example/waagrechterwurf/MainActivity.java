@@ -34,7 +34,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Button zur_hilfe_seite = (Button) findViewById(R.id.zur_hilfe_seite);
         zur_hilfe_seite.setOnClickListener(this);
 
-        eingegebene_hoehe = findViewById(R.id.eingegebene_höhe);
+        eingegebene_hoehe = findViewById(R.id.eingegebene_hoehe);
         eingegebene_beschleunigung = findViewById(R.id.eingegebene_beschleunigung);
 
 
@@ -66,11 +66,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //Für die nächste Seite zum darstellen
         Intent intent = new Intent(this, Activity2_Anzeige.class);
 // gebe die Hoehe weiter
-        Double textHoehe = Double.parseDouble(eingegebene_hoehe.getText().toString());
-        intent.putExtra("data_hoehe", textHoehe);
+        Double wertHoehe = Double.parseDouble(eingegebene_hoehe.getText().toString());
+        intent.putExtra("wert_hoehe", wertHoehe);
 // gebe die Geschwindigkeit weiter
-        Double textV = Double.parseDouble(eingegebene_beschleunigung.getText().toString());
-        intent.putExtra("data_beschleunigung", textV);
+        Double wertV = Double.parseDouble(eingegebene_beschleunigung.getText().toString());
+        intent.putExtra("wert_v", wertV);
 
         startActivity(intent);
     }

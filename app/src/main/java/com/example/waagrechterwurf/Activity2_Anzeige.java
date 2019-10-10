@@ -28,15 +28,15 @@ public class Activity2_Anzeige extends Activity implements View.OnClickListener 
 
 //Darstellung der Zahlen auf die TextViews aus dem erstellen Intent von der vorherigen Seite
         Intent intent = getIntent();
-        Double hoeheVonActivity1 = intent.getDoubleExtra("data_hoehe", 0);
-        String hoeheVonActivity1_2 = String.valueOf(hoeheVonActivity1);
-        textViewHoehe.setText(hoeheVonActivity1_2);
+        Double wertHoeheVA1 = intent.getDoubleExtra("wert_hoehe", 0);
+        String wertHoeheVA1_String = String.valueOf(wertHoeheVA1);
+        textViewHoehe.setText(wertHoeheVA1_String);
 
-        Double vVonActivity1 = intent.getDoubleExtra("data_beschleunigung", 0);
-        String vVonActivity1_2 = String.valueOf(vVonActivity1);
-        textViewV.setText(vVonActivity1_2);
+        Double wertVVA1 = intent.getDoubleExtra("wert_v", 0);
+        String wertVVA1_String = String.valueOf(wertVVA1);
+        textViewV.setText(wertVVA1_String);
 // Berechnung und Darstellung der Werte
-        weite = (vVonActivity1 * Math.sqrt((2 * hoeheVonActivity1) / gravitation));
+        weite = Math.round((wertVVA1 * Math.sqrt((2 * wertHoeheVA1) / gravitation))*100.0) / 100.0;
         String weiteString = String.valueOf(weite);
         textViewErgebnis.setText(weiteString);
 
