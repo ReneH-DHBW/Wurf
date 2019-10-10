@@ -62,17 +62,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //Für berechnen klick
     @Override
     public void onClick(View view) {
-        hoehe = Integer.valueOf(eingegebene_hoehe.getText().toString());
-        beschleunigung = Integer.valueOf(eingegebene_beschleunigung.getText().toString());
-        weite = (int) (beschleunigung * Math.sqrt((2 * hoehe) / gravitation));
 
 //Für die nächste Seite zum darstellen
         Intent intent = new Intent(this, Activity2_Anzeige.class);
-
-        String textHoehe = eingegebene_hoehe.getText().toString();
+// gebe die Hoehe weiter
+        Double textHoehe = Double.parseDouble(eingegebene_hoehe.getText().toString());
         intent.putExtra("data_hoehe", textHoehe);
-
-        String textV = eingegebene_beschleunigung.getText().toString();
+// gebe die Geschwindigkeit weiter
+        Double textV = Double.parseDouble(eingegebene_beschleunigung.getText().toString());
         intent.putExtra("data_beschleunigung", textV);
 
         startActivity(intent);
