@@ -44,7 +44,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         });
 // Toast erstellen für Geschwindigkeit (Hilfe)
-        Button hilfe_h = (Button) findViewById(R.id.hilfe_button_h);
+        Button hilfe_h = findViewById(R.id.hilfe_button_h);
         hilfe_h.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
