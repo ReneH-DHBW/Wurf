@@ -11,4 +11,6 @@
     <string name="toast_hilfe_v">Die Wurfstärke eines Erwachsenen liegt im Bereich von ... bis ... .</string>
     <string name="toast_hilfe_h">Die Höhe von der Sie werfen</string>
 
+    <string name="hilfe_seite_text">Hier steht später der Hilfe Text</string>
+
 </resources>

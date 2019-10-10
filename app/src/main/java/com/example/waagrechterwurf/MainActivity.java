@@ -18,11 +18,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected EditText eingegebene_hoehe = null;
     protected EditText eingegebene_beschleunigung = null;
 
-    int hoehe = 0;
-    int beschleunigung = 0;
-    int weite = 0;
-    int gravitation = 10;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +26,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Button weite_wird_berechnet = findViewById(R.id.weite_wird_berechnet);
         weite_wird_berechnet.setOnClickListener(this);
 
-        Button zur_hilfe_seite = (Button) findViewById(R.id.zur_hilfe_seite);
+        Button zur_hilfe_seite = findViewById(R.id.zur_hilfe_seite);
         zur_hilfe_seite.setOnClickListener(this);
 
         eingegebene_hoehe = findViewById(R.id.eingegebene_hoehe);
@@ -59,19 +54,28 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         });
     }
-//Für berechnen klick
+//Für berechnen klick. Idee dahinter, je nachdem auf welchen Button ich drücke schaut der switch welchen Case er ausführen muss.
     @Override
     public void onClick(View view) {
-
-//Für die nächste Seite zum darstellen
-        Intent intent = new Intent(this, Activity2_Anzeige.class);
+        switch (view.getId()) {
+// Zur Ergebnis-Seite
+            case R.id.weite_wird_berechnet:
+                Intent intent = new Intent(this, Activity2_Anzeige.class);
 // gebe die Hoehe weiter
-        Double wertHoehe = Double.parseDouble(eingegebene_hoehe.getText().toString());
-        intent.putExtra("wert_hoehe", wertHoehe);
+                Double wertHoehe = Double.parseDouble(eingegebene_hoehe.getText().toString());
+                intent.putExtra("wert_hoehe", wertHoehe);
 // gebe die Geschwindigkeit weiter
-        Double wertV = Double.parseDouble(eingegebene_beschleunigung.getText().toString());
-        intent.putExtra("wert_v", wertV);
+                Double wertV = Double.parseDouble(eingegebene_beschleunigung.getText().toString());
+                intent.putExtra("wert_v", wertV);
+                startActivity(intent);
+                break;
+// Zur Hilfe Seite
+            case R.id.zur_hilfe_seite:
+                Intent intentHilfe = new Intent(this, Activity3_Hilfe.class);
+                startActivity(intentHilfe);
+                break;
+        }
 
-        startActivity(intent);
+
     }
 }

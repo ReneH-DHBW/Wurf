@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Activity2_Anzeige extends Activity implements View.OnClickListener {
@@ -26,6 +27,9 @@ public class Activity2_Anzeige extends Activity implements View.OnClickListener 
         textViewV = findViewById(R.id.v_anzeigen);
         textViewErgebnis = findViewById(R.id.ergebnis_anzeigen);
 
+        Button zur_hilfe_seite = findViewById(R.id.zur_hilfe_seite);
+        zur_hilfe_seite.setOnClickListener(this);
+
 //Darstellung der Zahlen auf die TextViews aus dem erstellen Intent von der vorherigen Seite
         Intent intent = getIntent();
         Double wertHoeheVA1 = intent.getDoubleExtra("wert_hoehe", 0);
@@ -44,6 +48,13 @@ public class Activity2_Anzeige extends Activity implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
+        switch (view.getId()) {
+
+            case R.id.zur_hilfe_seite:
+                Intent intentHilfe = new Intent(this, Activity3_Hilfe.class);
+                startActivity(intentHilfe);
+                break;
+        }
 
     }
 }
