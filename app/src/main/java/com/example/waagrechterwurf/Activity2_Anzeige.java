@@ -49,7 +49,7 @@ public class Activity2_Anzeige extends Activity implements View.OnClickListener 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-
+// Navigation zur Hilfe Seite
             case R.id.zur_hilfe_seite:
                 Intent intentHilfe = new Intent(this, Activity3_Hilfe.class);
                 startActivity(intentHilfe);

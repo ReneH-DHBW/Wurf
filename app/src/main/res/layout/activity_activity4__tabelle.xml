@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity3_Hilfe">
+    tools:context=".Activity4_Tabelle">
 
     <TextView
         android:id="@+id/hilfe_text_1"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="200dp"
-        android:text="@string/hilfe_seite_text" />
+        android:text="Hier kommt die Tabelle" />
     <Button
         android:id="@+id/zur_Startseite"
         android:layout_width="wrap_content"
@@ -24,15 +24,5 @@
         android:layout_marginTop="560dp"
         android:layout_marginEnd="20dp"
         android:text="@string/Button_Zurück_zu_Start" />
-    <Button
-        android:id="@+id/zur_Tabelle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="150dp"
-        android:text="@string/Button_Zu_der_Tabelle" />
+
 </RelativeLayout>
