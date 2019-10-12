@@ -3,7 +3,7 @@
 
     <string name="Button_weite_wird_berechnet">Berechnen</string>
     <string name="EditText_hohe_eingeben">Höhe eingeben (m)</string>
-    <string name="EdiText_eingegebene_Beschleunigung">Beschleunigung eingeben (m/s)</string>
+    <string name="EdiText_eingegebene_Beschleunigung">Beschleunigung (m/s)</string>
     <string name="Button_Hilfe">Hilfe-Seite</string>
     <string name="Button_Hilfe_V">Hilfe</string>
     <string name="Button_Hilfe_H">Hilfe</string>

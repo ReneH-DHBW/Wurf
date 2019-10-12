@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity2_Anzeige">
+    tools:context=".Activity2_Anzeige"
+    android:background="@drawable/clipart_bilder_rechts">
 
     <Button
         android:id="@+id/zur_hilfe_seite"

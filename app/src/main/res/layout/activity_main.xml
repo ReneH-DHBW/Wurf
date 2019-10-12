@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/berge_bearbeitet">
 
     <Button
         android:id="@+id/zur_hilfe_seite"
@@ -13,20 +14,25 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="260dp"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/Button_Hilfe" />
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="614dp"
+        android:layout_marginEnd="168dp"
+        android:background="@drawable/awesome_toast_hilfe_button"
+        android:text="@string/Button_Hilfe"
+        android:textColor="@color/colorWhite" />
 
     <Button
         android:id="@+id/weite_wird_berechnet"
-        android:layout_width="wrap_content"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/eingegebene_beschleunigung"
         android:layout_alignParentStart="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="50dp"
-        android:text="@string/Button_weite_wird_berechnet" />
+        android:background="@drawable/awesome_berechnen_button"
+        android:text="@string/Button_weite_wird_berechnet"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/hilfe_button_v"
@@ -38,6 +44,8 @@
         android:layout_marginStart="300dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/awesome_toast_hilfe_button"
         android:text="@string/Button_Hilfe_V" />
 
     <Button
@@ -50,6 +58,8 @@
         android:layout_marginStart="300dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/awesome_toast_hilfe_button"
         android:text="@string/Button_Hilfe_H" />
 
     <EditText
@@ -65,6 +75,7 @@
         android:autofillHints="0"
         android:ems="10"
         android:hint="@string/EditText_hohe_eingeben"
+        android:textAlignment="center"
         android:inputType="numberDecimal" />
 
     <EditText
@@ -80,6 +91,7 @@
         android:autofillHints="0"
         android:ems="10"
         android:hint="@string/EdiText_eingegebene_Beschleunigung"
+        android:textAlignment="center"
         android:inputType="numberDecimal" />
 
 </RelativeLayout>

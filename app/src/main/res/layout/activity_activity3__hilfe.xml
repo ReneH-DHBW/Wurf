@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity3_Hilfe">
+    tools:context=".Activity3_Hilfe"
+    android:background="@drawable/clipart_bilder_links">
 
     <TextView
         android:id="@+id/hilfe_text_1"
