@@ -30,10 +30,6 @@ public class Activity3_Hilfe extends AppCompatActivity implements View.OnClickLi
                 startActivity(intentStart);
                 break;
 // Zur Tabellen Seite
-            case R.id.zur_Tabelle:
-                Intent intentTabelle = new Intent(this, Activity4_Tabelle.class);
-                startActivity(intentTabelle);
-                break;
         }
     }
 }

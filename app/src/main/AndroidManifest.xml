@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity4_Tabelle"></activity>
         <activity android:name=".Activity3_Hilfe" />
         <activity android:name=".Activity2_Anzeige" />
         <activity android:name=".MainActivity">
