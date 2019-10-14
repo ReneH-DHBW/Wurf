@@ -6,6 +6,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,24 +19,29 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //edit Texte oben deklarieren und Buttons in onCreate
     protected EditText eingegebene_hoehe = null;
     protected EditText eingegebene_beschleunigung = null;
+    protected Button weite_wird_berechnet;
+    protected Button zur_hilfe_seite;
+    protected Button hilfe_v;
+    protected Button hilfe_h;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button weite_wird_berechnet = findViewById(R.id.weite_wird_berechnet);
+        weite_wird_berechnet = findViewById(R.id.weite_wird_berechnet);
         weite_wird_berechnet.setOnClickListener(this);
 
-        Button zur_hilfe_seite = findViewById(R.id.zur_hilfe_seite);
+        zur_hilfe_seite = findViewById(R.id.zur_hilfe_seite);
         zur_hilfe_seite.setOnClickListener(this);
 
         eingegebene_hoehe = findViewById(R.id.eingegebene_hoehe);
+        eingegebene_hoehe.addTextChangedListener(berechnenWatcher);
         eingegebene_beschleunigung = findViewById(R.id.eingegebene_beschleunigung);
-
+        eingegebene_beschleunigung.addTextChangedListener(berechnenWatcher);
 
 // Toast erstellen für Geschwindigkeit (Hilfe)
-        Button hilfe_v = findViewById(R.id.hilfe_button_v);
+        hilfe_v = findViewById(R.id.hilfe_button_v);
         hilfe_v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +51,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         });
 // Toast erstellen für Geschwindigkeit (Hilfe)
-        Button hilfe_h = findViewById(R.id.hilfe_button_h);
+        hilfe_h = findViewById(R.id.hilfe_button_h);
         hilfe_h.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +83,20 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
         }
 
-
     }
+//Der TextWatcher verhindet, dass ohne die Eingabe von Werten der Berechnen Button gedrückt werden kann
+    private TextWatcher berechnenWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String hoeheString = eingegebene_hoehe.getText().toString().trim();
+            String beschlString = eingegebene_beschleunigung.getText().toString().trim();
+            weite_wird_berechnet.setEnabled(!hoeheString.isEmpty()&&!beschlString.isEmpty());
+        }
+        @Override
+        public void afterTextChanged(Editable editable) {
+        }
+    };
 }
