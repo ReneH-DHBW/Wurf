@@ -13,7 +13,7 @@ public abstract class UserRoomDatabase extends RoomDatabase {
 
     private static UserRoomDatabase INSTANCE;
 
-    static UserRoomDatabase getDatabase(Context context){
+    public static UserRoomDatabase getDatabase(Context context){
         if(INSTANCE == null){
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                     UserRoomDatabase.class, "user_database")

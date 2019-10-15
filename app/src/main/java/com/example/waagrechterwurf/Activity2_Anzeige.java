@@ -4,10 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.waagrechterwurf.datenbank.User;
+import com.example.waagrechterwurf.datenbank.UserDAO;
+import com.example.waagrechterwurf.datenbank.UserRoomDatabase;
 
 public class Activity2_Anzeige extends Activity implements View.OnClickListener {
 // TextViews draußen deklarieren
@@ -17,6 +23,8 @@ public class Activity2_Anzeige extends Activity implements View.OnClickListener 
 
     double weite = 0;
     double gravitation = 9.81;
+// als Feld anlegen
+    private UserDAO dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +37,11 @@ public class Activity2_Anzeige extends Activity implements View.OnClickListener 
 
         Button zur_hilfe_seite = findViewById(R.id.zur_hilfe_seite);
         zur_hilfe_seite.setOnClickListener(this);
+
+        Button zur_Tabelle = findViewById(R.id.zur_Tabelle);
+        zur_Tabelle.setOnClickListener(this);
+
+        dao = UserRoomDatabase.getDatabase(this).userDAO();
 
 //Darstellung der Zahlen auf die TextViews aus dem erstellen Intent von der vorherigen Seite
         Intent intent = getIntent();
@@ -54,7 +67,45 @@ public class Activity2_Anzeige extends Activity implements View.OnClickListener 
                 Intent intentHilfe = new Intent(this, Activity3_Hilfe.class);
                 startActivity(intentHilfe);
                 break;
-        }
 
+            case R.id.add_db:
+                Button add_db = findViewById(R.id.add_db);
+                add_db.setOnClickListener(this);
+                saveWordOnClick();
+                break;
+// To DO .class fehlt noch
+            case R.id.zur_Tabelle:
+                Intent intentTabelle = new Intent(this, Activity4_Auflistung.class);
+                startActivity(intentTabelle);
+                break;
+        }
+    }
+// 2. Override?? Habe ich jetzt nicht implementiert
+    class SpeichernTask extends AsyncTask<User, Void, Void>{
+
+        @Override
+        protected Void doInBackground(User... users) {
+            dao.insert(users[0]);
+            return null;
+        }
+    }
+// Über das müssen wir mal diskutieren
+    private void saveWordOnClick(){
+        Intent intent = getIntent();
+        Double wertHoeheVA1 = intent.getDoubleExtra("wert_hoehe", 0);
+        String wertHoeheVA1_String = String.valueOf(wertHoeheVA1);
+
+        Double wertVVA1 = intent.getDoubleExtra("wert_v", 0);
+        String wertVVA1_String = String.valueOf(wertVVA1);
+
+        weite = Math.round((wertVVA1 * Math.sqrt((2 * wertHoeheVA1) / gravitation))*100.0) / 100.0;
+        String weiteString = String.valueOf(weite);
+
+        StringBuilder sb = new StringBuilder(wertHoeheVA1_String).append(",").append(wertVVA1_String).append(",").append(weiteString);
+
+// Hier gibt es das erste Problem bzw. keine Ahnung wie wir das lösen wollen.
+        if(!sb.toString().isEmpty()){
+            new SpeichernTask().execute(new User(sb.toString()));
+        }
     }
 }

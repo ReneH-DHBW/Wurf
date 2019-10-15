@@ -3,7 +3,7 @@ package com.example.waagrechterwurf.datenbank;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-//StringBuilder?
+//StringBuilder? Brauche ich den?
 @Entity
 public class User {
 
@@ -22,6 +22,10 @@ public class User {
         this.hoehe = hoehe;
         this.beschleunigung = beschleunigung;
         this.ergebnis = ergebnis;
+    }
+
+    public User(String toString) {
+
     }
 
     public double getHoehe() {
